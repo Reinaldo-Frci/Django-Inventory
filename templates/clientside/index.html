@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Flights123</title>
+        <link rel="stylesheet" href="{% static 'clientside/css/index.css'%}">
+        <script src="{% static 'clientside/js/index.js' %}"></script>
+    </head>
+
+<body>
+<div id="header">
+    <div class="container">
+        <nav>
+            <ul>
+                <li><a href="#header">Home</a></li>
+                <li><a href="#deals">Deals</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">My Flights</a></li>
+                {% if not request.user.is_authenticated %}
+                <div class="popupButton" id="loginButton">Login</div>
+                {% endif %}
+            </ul>
+        </nav>
+        <div class="popup" id="loginPopup">
+            <form>
+                <h1>Login</h1>
+                <input id="email" type="text" placeholder="Email">
+                <input id="password" type="password" placeholder="Password">
+                <button type="submit" name="submit">Login</button>
+            </form>
+        </div>
+        <div class="header-text">
+            <p>Your <span>Flights</span></p>
+            <h1>Anywhere<br>Anytime</h1>
+        </div>
+    </div>
+
+</div>
+
+<div id="deals">
+<ul>
+    {% for flight in flights %}
+    <li><a href="{% url 'flight' flight.id %}">
+        Flight {{ flight.id }}: {{ flight.origin }} to {{ flight.destination }}
+        </a>
+    </li>
+    {% endfor %}
+</ul>
+</div>
+</body>
+
+</html>
+
+
