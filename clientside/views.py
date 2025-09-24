@@ -15,6 +15,6 @@ def login_view(request):
             return HttpResponseRedirect("inventory/")
         else:
             return render(request, "clientside/login.html", {
-                "message": "Invalid Credentials"
+                "message": "USUÁRIO INVÁLIDO"
             })
     return render(request, "clientside/login.html")

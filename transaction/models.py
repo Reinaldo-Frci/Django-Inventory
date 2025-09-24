@@ -1,3 +1,4 @@
+import uuid
 from django.db import models
 from django.utils.functional import empty
 from inventory.models import Equipamento, Local, Cabo
@@ -7,6 +8,7 @@ from inventory.models import Equipamento, Local, Cabo
 
 
 class LogSaida(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, max_length=10)
     nome = models.CharField(max_length=30)
     equipamento = models.ManyToManyField(Equipamento, blank=True)
     cabo = models.ManyToManyField(Cabo, blank=True)
@@ -21,6 +23,7 @@ class LogSaida(models.Model):
             return f"{self.equipamento} {self.cabo} foi devolvido por {self.nome} no dia {self.timein}"
 
 class LogMudarLocal(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, max_length=10)
     nome = models.CharField(max_length=30)
     equipamento = models.ManyToManyField(Equipamento, blank=True)
     cabo = models.ManyToManyField(Cabo, blank=True)

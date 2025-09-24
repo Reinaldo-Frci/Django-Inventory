@@ -5,14 +5,84 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Flights123</title>
+        <title>Inventory</title>
         <link rel="stylesheet" href="{% static 'inventory/css/index.css'%}">
         <script src="{% static 'inventory/js/index.js' %}"></script>
     </head>
 
 <body>
-<div id="divBusca">
-  <input type="text" id="txtBusca" placeholder="Buscar..."/>
+<div class="cards">
+{% for item in items %}
+    {% if item.marca %}
+
+  <div class="card">
+    <div class="card__image-holder">
+      <img class="card__image" src="https://source.unsplash.com/300x225/?wave" alt="wave" />
+    </div>
+    <div class="card-title">
+      <a href="#" class="toggle-info btn">
+        <span class="left"></span>
+        <span class="right"></span>
+      </a>
+      <h2>
+          {{ item.nome|capfirst }}
+          <small>{{ item.marca|capfirst }} modelo {{ item.modelo }}</small>
+      </h2>
+    </div>
+    <div class="card-flap flap1">
+      <div class="card-description">
+        {% if item.local %}
+            {{ item.local }}
+        {% else %}
+            O equipamento foi retirado
+        {% endif %}
+
+      <div>id: {{ item.id|truncatechars:8 }}</div>
+      </div>
+      <div class="card-flap flap2">
+        <div class="card-actions">
+          <a href="{% url 'item' item.id %}" class="btn">Ver detalhes</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    {% else %}
+
+  <div class="card">
+    <div class="card__image-holder">
+      <img class="card__image" src="https://source.unsplash.com/300x225/?wave" alt="wave" />
+    </div>
+    <div class="card-title">
+      <a href="#" class="toggle-info btn">
+        <span class="left"></span>
+        <span class="right"></span>
+      </a>
+      <h2>
+
+          Cabo {{ item.tipo }}
+
+          <small>{{ item.comprimento}} metros.</small>
+      </h2>
+    </div>
+    <div class="card-flap flap1">
+      <div class="card-description">
+        {% if item.local %}
+            {{ item.local }}
+        {% else %}
+            O equipamento foi retirado
+        {% endif %}
+      <div>id: {{ item.id|truncatechars:8 }}</div>
+      </div>
+      <div class="card-flap flap2">
+        <div class="card-actions">
+          <a href="#" class="btn">Ver detalhes</a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}
+{% endfor %}
 </div>
 </body>
 
