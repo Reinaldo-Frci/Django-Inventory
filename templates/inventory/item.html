@@ -16,7 +16,124 @@
 
 
 {% endif %}
+<main class="main">
+  <header class="header">
+    <div class="menu">
+    </div>
+    <nav class="nav">
+      <span class="page-title text-lg">Registros</span>
+    </nav>
+  </header>
+  <section class="data-summary">
+    <div class="data-info bg-yellow">
+      <h6 class="data-info__heading">spent</h6>
+      <div class="data-info__content">
+        <sup class="sup">$</sup><span class="data-info__amount text-lg">1,253</span>
+      </div>
+    </div>
+    <div class="data-info bg-blue">
+      <h6 class="data-info__heading">left</h6>
+      <div class="data-info__content">
+        <sup class="sup">$</sup><span class="data-info__amount text-lg">1,747</span>
+      </div>
+    </div>
+    <div class="data-info data-info--light">
+      <h6 class="data-info__heading">next payment</h6>
+      <div class="data-info__content">
+        <sup class="sup">$</sup><span class="data-info__amount text-lg">235</span>
+      </div>
+      <div class="data-info__tag">Want to pay less?</div>
+    </div>
+    <div class="data-info data-info--light">
+      <h6 class="data-info__heading">next payment due</h6>
+      <div class="data-info__content">
+        <span class="data-info__amount text-lg">12 May</span>
+      </div>
+      <div class="data-info__tag">Autopay Scheduled</div>
+    </div>
+    <button class="btn btn-primary">Make Payment Now</button>
+  </section>
+  <section class="data-body">
+    <div class="scroll-check">
+      <table id="data-table">
+        <thead>
+          <tr class="table__row--header">
+            <th><span class="header__title">ID</span></th>
+            <th><span class="header__title">Merchant</span></th>
+            <th><span class="header__title">Charge</span></th>
+            <th><span class="header__title">Date</span></th>
+            <th><span class="header__title">Cost</span></th>
+          </tr>
+        </thead>
 
-
+        <tbody class="table__body">
+          <tr class="table__row">
+            <td><span class="id">ZZ01</span></td>
+            <td><span class="merchant">The standard miami</span></td>
+            <td><span class="charge">purchase</span></td>
+            <td><span class="date">April 18</span></td>
+            <td><span class="price">$648</span></td>
+          </tr>
+          <tr class="table__row">
+            <td><span class="id">ZZ02</span></td>
+            <td><span class="merchant">Delta Airlines</span></td>
+            <td><span class="charge">pending</span></td>
+            <td><span class="date">April 23</span></td>
+            <td><span class="price">$465</span></td>
+          </tr>
+          <tr class="table__row">
+            <td><span class="id">ZZ03</span></td>
+            <td><span class="merchant">Netflix</span></td>
+            <td><span class="charge">subscription</span></td>
+            <td><span class="date">April 29</span></td>
+            <td><span class="price">$9</span></td>
+          </tr>
+          <tr class="table__row">
+            <td><span class="id">ZZ04</span></td>
+            <td><span class="merchant">Pringles</span></td>
+            <td><span class="charge">purchase</span></td>
+            <td><span class="date">April 29</span></td>
+            <td><span class="price">$756</span></td>
+          </tr>
+          <tr class="table__row">
+            <td><span class="id">ZZ05</span></td>
+            <td><span class="merchant">Right Gas Fuel</span></td>
+            <td><span class="charge">purchase</span></td>
+            <td><span class="date">April 29</span></td>
+            <td><span class="price">$100</span></td>
+          </tr>
+          <tr class="table__row">
+            <td><span class="id">ZZ06</span></td>
+            <td><span class="merchant">LoL 2020 Worlds Ticket</span></td>
+            <td><span class="charge">purchase</span></td>
+            <td><span class="date">April 30</span></td>
+            <td><span class="price">$1,349</span></td>
+          </tr>
+          <tr class="table__row">
+            <td><span class="id">ZZ07</span></td>
+            <td><span class="merchant">Netflix</span></td>
+            <td><span class="charge">subscription</span></td>
+            <td><span class="date">April 32</span></td>
+            <td><span class="price">$90</span></td>
+          </tr>
+          <tr class="table__row">
+            <td><span class="id">ZZ08</span></td>
+            <td><span class="merchant">Delta Airlines</span></td>
+            <td><span class="charge">subscription</span></td>
+            <td><span class="date">April 33</span></td>
+            <td><span class="price">$34</span></td>
+          </tr>
+          <tr class="table__row">
+            <td><span class="id">ZZ09</span></td>
+            <td><span class="merchant">COS Online</span></td>
+            <td><span class="charge">purchase</span></td>
+            <td><span class="date">April 34</span></td>
+            <td><span class="price">$12</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</main>
 </body>
 </html>
