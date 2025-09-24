@@ -1,27 +1,319 @@
-:root {
-    --background: #231F20;
-    --color: #ffffff;
-    --primary-color: #F7B267;
-}
-
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 * {
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  outline: none;
 }
 
 html {
-    scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
 }
 
 body {
-    margin: 0;
-    box-sizing: border-box;
-    font-family: "poppins";
-    background: var(--background);
-    color: var(--color);
-    letter-spacing: 1px;
-    transition: background 0.2s ease;
-    -webkit-transition: background 0.2s ease;
-    -moz-transition: background 0.2s ease;
-    -ms-transition: background 0.2s ease;
-    -o-transition: background 0.2s ease;
+  font-family: "Poppins", sans-serif;
+  background-color: #231F20;
+  color: #ffffff;
+  width: 100%;
+  height: auto;
+  min-height: 800px;
+  line-height: 1.6;
+  vertical-align: baseline;
 }
+
+button {
+  border: 0;
+  outline: 0;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  background: transparent;
+}
+
+th {
+  text-align: left;
+  font-weight: 500;
+  border: none;
+}
+
+th span,
+td span {
+  display: block;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.bg-green, .btn-primary {
+  background-color: #6dea9e;
+}
+
+.bg-blue {
+  background-color: #aff5f7;
+}
+
+.bg-yellow {
+  background-color: #fff691;
+}
+
+.text-lg {
+  font-size: 1.802rem;
+}
+
+@media screen and (max-width: 860px) {
+  .text-lg {
+    font-size: 1.602rem;
+  }
+}
+
+.btn {
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: capitalize;
+  -webkit-transition: 0.5ms ease;
+  transition: 0.5ms ease;
+}
+
+@media screen and (max-width: 860px) {
+  .btn {
+    font-size: 0.85rem;
+  }
+}
+
+.btn-primary {
+  color: #0f0f0f;
+}
+
+.btn-primary:hover, .btn-primary:active {
+  background-color: #6dea9fda;
+}
+
+.main {
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr minmax(150px, 25%);
+      grid-template-columns: 1fr minmax(150px, 25%);
+  -ms-grid-rows: 95px auto;
+      grid-template-rows: 95px auto;
+  -webkit-border-before: 7px solid #0f0f0f;
+          border-block-start: 7px solid #0f0f0f;
+}
+
+@media screen and (max-width: 860px) {
+  .main {
+    -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
+  }
+}
+
+.header {
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: minmax(65px, 10%) 1fr;
+      grid-template-columns: minmax(65px, 10%) 1fr;
+  -ms-grid-rows: inherit;
+      grid-template-rows: inherit;
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+.menu {
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.menu svg {
+  width: 32px;
+  height: 32px;
+}
+
+@media screen and (max-width: 860px) {
+  .menu svg {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+.nav {
+  line-height: 95px;
+}
+
+.nav .page-title {
+  padding-left: 2.6rem;
+}
+
+@media screen and (max-width: 860px) {
+  .nav .page-title {
+    padding-left: 1.8rem;
+  }
+}
+
+.data-summary {
+  display: grid;
+  height: 100vh;
+  grid-column: 2;
+  grid-row: 1;
+  grid-template-rows: repeat(2, 95px) repeat(2, 1fr) 60px;
+  grid-template-columns: 100%;
+  border-left: 0.86px solid rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width: 860px) {
+  .data-summary {
+    height: auto;
+    grid-column: auto;
+    grid-row: auto;
+
+  }
+}
+.data-info {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.data-info__heading {
+  font-size: 0.67rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.data-info__content {
+  font-weight: 400;
+}
+
+.data-info__content .sup {
+  font-weight: 500;
+  font-size: 1.125rem;
+  -webkit-margin-end: 0.29rem;
+          margin-inline-end: 0.29rem;
+}
+
+.data-info__amount {
+  letter-spacing: 2px;
+}
+
+.data-info__tag {
+  min-width: 120px;
+  min-height: 25px;
+  line-height: 25px;
+  border-radius: 25px;
+  text-align: center;
+  font-weight: 300;
+  font-size: 0.67rem;
+  background-color: #fdfdfd;
+}
+
+.data-info:nth-child(4) {
+  border-bottom: none;
+}
+
+.data-info--light {
+  background-color: #ffffff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  min-height: 200px;
+}
+
+.data-info--light .data-info__content {
+  margin: 1rem 0;
+}
+
+.data-body {
+  width: 100%;
+}
+
+.scroll-check {
+  width: 100%;
+  height: 500px;
+  overflow-y: scroll;
+}
+
+@media screen and (max-width: 700px) {
+  .scroll-check {
+    overflow-x: scroll;
+  }
+}
+
+#data-table {
+  width: 100%;
+  min-width: 600px;
+}
+
+#data-table .table__row--header {
+  background-color: #0f0f0f;
+  color: #ffffff;
+}
+
+#data-table .table__row--header th:first-child {
+  text-align: center;
+}
+
+#data-table .table__row--header .header__title {
+  display: block;
+  padding: 1rem 0;
+  text-transform: capitalize;
+  font-weight: 400;
+}
+
+#data-table .table__row {
+  height: 4rem;
+}
+
+#data-table .table__row:nth-child(odd) {
+  background-color: #fdfdfd;
+}
+
+#data-table .table__row .id {
+  text-align: center;
+}
+
+#data-table .table__row .price,
+#data-table .table__row .merchant {
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+#data-table .table__row .date,
+#data-table .table__row .charge {
+  text-transform: capitalize;
+  font-size: 0.85rem;
+  color: #8a8a8a;
+}
+
+@media screen and (max-width: 860px) {
+  #data-table col:nth-child(1) {
+    display: none;
+  }
+}
+/*# sourceMappingURL=item.css.map */
